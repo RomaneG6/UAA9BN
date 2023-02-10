@@ -1,18 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "H:\\UAA11\\BatailleNaval\\BatailleNaval.csproj": {}
+    "H:\\UAA11\\UAA9BN\\BatailleNaval\\BatailleNaval\\BatailleNaval.csproj": {}
   },
   "projects": {
-    "H:\\UAA11\\BatailleNaval\\BatailleNaval.csproj": {
+    "H:\\UAA11\\UAA9BN\\BatailleNaval\\BatailleNaval\\BatailleNaval.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\UAA11\\BatailleNaval\\BatailleNaval.csproj",
+        "projectUniqueName": "H:\\UAA11\\UAA9BN\\BatailleNaval\\BatailleNaval\\BatailleNaval.csproj",
         "projectName": "BatailleNaval",
-        "projectPath": "H:\\UAA11\\BatailleNaval\\BatailleNaval.csproj",
+        "projectPath": "H:\\UAA11\\UAA9BN\\BatailleNaval\\BatailleNaval\\BatailleNaval.csproj",
         "packagesPath": "C:\\Users\\210469.asty-moulin\\.nuget\\packages\\",
-        "outputPath": "H:\\UAA11\\BatailleNaval\\obj\\",
+        "outputPath": "H:\\UAA11\\UAA9BN\\BatailleNaval\\BatailleNaval\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "C:\\Users\\210469.asty-moulin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -54,7 +57,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
         }
       }
     }

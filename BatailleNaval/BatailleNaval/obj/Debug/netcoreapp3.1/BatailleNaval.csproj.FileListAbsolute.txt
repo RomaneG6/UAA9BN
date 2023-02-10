@@ -11,3 +11,17 @@ H:\UAA11\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.dll
 H:\UAA11\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.pdb
 H:\UAA11\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.genruntimeconfig.cache
 H:\UAA11\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.csprojAssemblyReference.cache
+H:\UAA11\UAA9BN\BatailleNaval\BatailleNaval\bin\Debug\netcoreapp3.1\BatailleNaval.exe
+H:\UAA11\UAA9BN\BatailleNaval\BatailleNaval\bin\Debug\netcoreapp3.1\BatailleNaval.deps.json
+H:\UAA11\UAA9BN\BatailleNaval\BatailleNaval\bin\Debug\netcoreapp3.1\BatailleNaval.runtimeconfig.json
+H:\UAA11\UAA9BN\BatailleNaval\BatailleNaval\bin\Debug\netcoreapp3.1\BatailleNaval.runtimeconfig.dev.json
+H:\UAA11\UAA9BN\BatailleNaval\BatailleNaval\bin\Debug\netcoreapp3.1\BatailleNaval.dll
+H:\UAA11\UAA9BN\BatailleNaval\BatailleNaval\bin\Debug\netcoreapp3.1\BatailleNaval.pdb
+H:\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.csproj.AssemblyReference.cache
+H:\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.GeneratedMSBuildEditorConfig.editorconfig
+H:\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.AssemblyInfoInputs.cache
+H:\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.AssemblyInfo.cs
+H:\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.csproj.CoreCompileInputs.cache
+H:\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.dll
+H:\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.pdb
+H:\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.genruntimeconfig.cache

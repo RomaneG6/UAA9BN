@@ -2,7 +2,8 @@
   "runtimeOptions": {
     "additionalProbingPaths": [
       "C:\\Users\\210469.asty-moulin\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\210469.asty-moulin\\.nuget\\packages"
+      "C:\\Users\\210469.asty-moulin\\.nuget\\packages",
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ]
   }
 }
