@@ -25,3 +25,17 @@ H:\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNava
 H:\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.dll
 H:\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.pdb
 H:\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.genruntimeconfig.cache
+C:\Users\roman\OneDrive\Documents\Progra\UAA11\UAA9BN\BatailleNaval\BatailleNaval\bin\Debug\netcoreapp3.1\BatailleNaval.exe
+C:\Users\roman\OneDrive\Documents\Progra\UAA11\UAA9BN\BatailleNaval\BatailleNaval\bin\Debug\netcoreapp3.1\BatailleNaval.deps.json
+C:\Users\roman\OneDrive\Documents\Progra\UAA11\UAA9BN\BatailleNaval\BatailleNaval\bin\Debug\netcoreapp3.1\BatailleNaval.runtimeconfig.json
+C:\Users\roman\OneDrive\Documents\Progra\UAA11\UAA9BN\BatailleNaval\BatailleNaval\bin\Debug\netcoreapp3.1\BatailleNaval.runtimeconfig.dev.json
+C:\Users\roman\OneDrive\Documents\Progra\UAA11\UAA9BN\BatailleNaval\BatailleNaval\bin\Debug\netcoreapp3.1\BatailleNaval.dll
+C:\Users\roman\OneDrive\Documents\Progra\UAA11\UAA9BN\BatailleNaval\BatailleNaval\bin\Debug\netcoreapp3.1\BatailleNaval.pdb
+C:\Users\roman\OneDrive\Documents\Progra\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.csproj.AssemblyReference.cache
+C:\Users\roman\OneDrive\Documents\Progra\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\roman\OneDrive\Documents\Progra\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.AssemblyInfoInputs.cache
+C:\Users\roman\OneDrive\Documents\Progra\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.AssemblyInfo.cs
+C:\Users\roman\OneDrive\Documents\Progra\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.csproj.CoreCompileInputs.cache
+C:\Users\roman\OneDrive\Documents\Progra\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.dll
+C:\Users\roman\OneDrive\Documents\Progra\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.pdb
+C:\Users\roman\OneDrive\Documents\Progra\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.genruntimeconfig.cache
