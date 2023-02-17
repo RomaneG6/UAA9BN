@@ -6,26 +6,39 @@ namespace BatailleNaval
     {
         static void Main(string[] args)
         {
-            string[,] grille2D = new string[10, 10];
-            string[] alpha = "ABCDEFGHIJ".ToCharArray();
-            AfficherGrille(grille2D, alpha);
-            Console.WriteLine(grille2D);
+            string resultat;
+            int[,] grille2D = new int[10, 10];
+            //char[] alpha = "ABCDEFGHIJ".ToCharArray();
+            AfficherGrille(grille2D, out resultat);
+            Console.WriteLine(resultat);
         }
-        static void AfficherGrille(string[,] grille2D, string[] alpha)
+        static void AfficherGrille(int[,] grille2D, out string resultat)
         {
-            int n = 0;
-            int nbr = 1;
-            for (int compteurColonne = 0; compteurColonne < 10; compteurColonne++)
+            resultat = "";
+
+            for (int i = 0; i < grille2D.GetLength(0) - 1; i++)
             {
-                grille2D[0, compteurColonne] = Convert.ToString(nbr);
-                nbr++;
+                for (int j = 0; j < grille2D.GetLength(1) - 1; j++)
+                {
+                    grille2D[i, j] = 0;
+                    resultat = resultat + grille2D[i, j] + " ";
+                }
+                resultat = resultat + "\n";
             }
-            for (int compteurLigne = 0; compteurLigne < 10; compteurLigne++)
-            {
-                grille2D[compteurLigne, 0] = alpha[n] ;
-                nbr++;
-                Console.WriteLine();
-            }
+            //int n = 0;
+            //int nbr = 1;
+            //for (int compteurColonne = 0; compteurColonne < grille2D.GetLength(0) - 1; compteurColonne++)
+            //{
+
+            //    grille2D[0, compteurColonne] = Convert.ToChar(nbr);
+            //    nbr++;
+            //}
+            //for (int compteurLigne = 0; compteurLigne < grille2D.GetLength(1) - 1; compteurLigne++)
+            //{
+            //    grille2D[compteurLigne, 0] = alpha[n] ;
+            //    nbr++;
+            //    Console.WriteLine();
+            //}
         }
     }
 }
