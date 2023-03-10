@@ -28,10 +28,9 @@ namespace BatailleNaval
             Console.WriteLine("\n");
             if (reponse == "seul")
             {
-                //tools.AfficherGrille(Jgrille2D,out alpha, out resultat);grille du joueur où il essaiera de deviner les bateau de l'adversaire
-                //Console.WriteLine(resultat + "\n" + "\n");
+                tools.AfficherGrille(Jgrille2D,out alpha, out resultat);//grille du joueur où il essaiera de deviner les bateau de l'adversaire
+                Console.WriteLine(resultat + "\n" + "\n");
                 tools.AfficherGrille(BJgrille2D, out alpha, out resultat);// grille du joueur où il placera ses bateaux
-                Console.WriteLine(resultat);
                 Console.WriteLine("Placer les différents bateau à votre disposition :\n\n");
                 Console.WriteLine("Ecrivez d'abord les extémités de la où vous voulez mettre vos bateau\nEn commmencant par les premières extrémités puis les dernières\n");
 
