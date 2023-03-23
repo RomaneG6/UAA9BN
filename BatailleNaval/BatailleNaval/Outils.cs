@@ -10,37 +10,47 @@ namespace BatailleNaval
         {
             alpha = new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" };
             resultat = "";
-            int nbr = 0;
+            
             for (int l = 0; l <= tab2D.GetLength(0) - 1; l++)
             {
+                int nbr = 0;
                 for (int c = 0; c <= tab2D.GetLength(1) - 1; c++)
                 {
-                    tab2D[c, l] = "0";
-                    tab2D[c, 0] = nbr.ToString();
-                    nbr++;
-
-                    for (int n = 0; n < alpha.Length; n++)
+                    if (l == 0 && c == 0)
                     {
-                        tab2D[0, l] = alpha[n];
+                        tab2D[l, c] = " ";
                     }
-                    resultat = resultat + tab2D[c, l] + " " + " " + " " + " " + " ";
+                    else if (l == 0)
+                    {
+                        tab2D[l, c] = nbr.ToString();
+                    }
+                    else if (c == 0)
+                    {
+                        tab2D[l, c] = alpha[l - 1];
+                    }
+                    else
+                    {
+                        tab2D[l, c] = "0";
+                    }
+                    resultat = resultat + tab2D[l, c] + " " + " " + " " + " " + " ";
+                    nbr++;
                 }
                 resultat = resultat + "\n" + "\n";
             }
         }
-        public void AfficherGrilleETBateau(int premBordColonne, string premBordLigne, int dernBordColonne, string dernBordLigne, string[] bateau, string[,] BJgrille2D, string resultat)
+        public void AfficherGrilleETBateau(int premBordColonne, int premBordLigne, string dernBordColonne, int dernBordLigne, string[] bateau, string[,] BJgrille2D, string resultat)
         {
             for (int l = 0; l < BJgrille2D.GetLength(0); l++)
             {
                 for (int c = 0; c < BJgrille2D.GetLength(1); c++)
-                {   
-                    if (premBordColonne == c)
+                {
+                    if (premBordLigne == l && premBordColonne == c)
                     {
-                        premBordColonne = 1;
+                        BJgrille2D[l, c] = "1";
                     }
                 }
             }
-            resultat = resultat + premBordColonne;
+            resultat = resultat + premBordLigne;
         }
     }
 }
