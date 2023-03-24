@@ -32,25 +32,23 @@ namespace BatailleNaval
                     {
                         tab2D[l, c] = "0";
                     }
-                    resultat = resultat + tab2D[l, c] + " " + " " + " " + " " + " ";
+                    resultat = resultat + tab2D[l, c] + "     ";
                     nbr++;
                 }
-                resultat = resultat + "\n" + "\n";
+                resultat = resultat + "\n\n";
             }
         }
-        public void AfficherGrilleETBateau(int premBordColonne, int premBordLigne, string dernBordColonne, int dernBordLigne, string[] bateau, string[,] BJgrille2D, string resultat)
+        public void AfficherGrilleETBateau(int premLigne, int premColonne, int dernLigne, int dernColonne, string[,] bJgrille2D, string resultat)
         {
-            for (int l = 0; l < BJgrille2D.GetLength(0); l++)
+            for (int l = premLigne; l < dernLigne; l++)
             {
-                for (int c = 0; c < BJgrille2D.GetLength(1); c++)
+                for (int c = premColonne; c < dernColonne; c++)
                 {
-                    if (premBordLigne == l && premBordColonne == c)
-                    {
-                        BJgrille2D[l, c] = "1";
-                    }
+                    bJgrille2D[l, c] = "1";
+                    resultat = resultat + bJgrille2D[l, c];
                 }
+                
             }
-            resultat = resultat + premBordLigne;
         }
     }
 }
