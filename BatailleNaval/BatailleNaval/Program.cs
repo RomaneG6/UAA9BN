@@ -18,12 +18,10 @@ namespace BatailleNaval
             string[] torpilleur = new string[2];
             string reponse = "";
             string[] bateau = new string[] { "porte avion (5 cases)", "croiseur (4 cases)", "contre-croiseur (3 cases)", "sous-marin (3 cases)", "torpilleur (2 cases)" };
-            int premBordColonne;
-            int premBordLigne;
-            int dernBordColonne;
-            int dernBordLigne;
-            int bordLigne;
-            int bordColonne;
+            int premColonne;
+            int premLigne;
+            int dernColonne;
+            int dernLigne;
 
             Console.WriteLine("Souhaitez-vous jouer à deux ou tout seul ? Tapez deux ou seul");
             reponse = Console.ReadLine();
@@ -41,17 +39,16 @@ namespace BatailleNaval
 
                     Console.WriteLine("Premières coordonnées :\n");
                     Console.WriteLine("Choisissez la ligne où vous voulez placer votre bateau");
-                    premBordLigne = int.Parse(Console.ReadLine());
+                    premLigne = int.Parse(Console.ReadLine());
                     Console.WriteLine("La colonne : En sachant qu'il faut répondre en chiffre \n(A -> 1\nB -> 2\nC -> 3\nD -> 4\nE -> 5\nF -> 6\nG -> 7\nH -> 8\nI -> 9\nJ -> 10)");
-                    premBordColonne = int.Parse(Console.ReadLine());
-                    tools.AfficherGrilleETBateau(premBordLigne, premBordColonne, bJgrille2D, resultat);
+                    premColonne = int.Parse(Console.ReadLine());
 
                     Console.WriteLine("Dernières coordonnées :\n");
                     Console.WriteLine("Choisissez la ligne où vous voulez placer votre bateau");
-                    dernBordLigne = int.Parse(Console.ReadLine());
+                    dernLigne = int.Parse(Console.ReadLine());
                     Console.WriteLine("La colonne :");
-                    dernBordColonne = int.Parse(Console.ReadLine());
-                    
+                    dernColonne = int.Parse(Console.ReadLine());
+                    tools.AfficherGrilleETBateau(premLigne, premColonne, dernLigne, dernColonne, bJgrille2D, resultat);
                     Console.WriteLine(resultat);
                 }
                 //tools.AfficherGrille(BJgrille2D, out alpha, out resultat);// grille du joueur où il placera ses bateaux
