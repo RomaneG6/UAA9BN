@@ -30,24 +30,53 @@ namespace BatailleNaval
                     }
                     else
                     {
-                        tab2D[l, c] = "0";
-                    }
-                    resultat = resultat + tab2D[l, c] + "     ";
+                        tab2D[l, c] = "-";
+                    } 
                     nbr++;
                 }
-                resultat = resultat + "\n\n";
             }
         }
-        public void AfficherGrilleETBateau(int premLigne, int premColonne, int dernLigne, int dernColonne, string[,] bJgrille2D, string resultat)
+        public void AfficherBateau(int premLigne, int premColonne, int dernLigne, int dernColonne, ref string[,] tab2D, string[] bateau)
         {
-            for (int l = premLigne; l < dernLigne; l++)
+            int compteur = 0;
+            for (int l = premLigne; l <= dernLigne; l++)
             {
-                for (int c = premColonne; c < dernColonne; c++)
+                for (int c = premColonne; c <= dernColonne; c++)
                 {
-                    bJgrille2D[l, c] = "1";
-                    resultat = resultat + bJgrille2D[l, c];
+                    if (bateau[compteur] == "porte avion (5 cases)")
+                    {
+                        tab2D[l, c] = "5";
+                    }
+
+                    else if (bateau[compteur] == "croiseur (4 cases)")
+                    {
+                        tab2D[l, c] = "4";
+                    }
+                    else if (bateau[compteur] == "contre-croiseur (3 cases)")
+                    {
+                        tab2D[l, c] = "3";
+                    }
+                    else if (bateau[compteur] == "sous-marin (3 cases)")
+                    {
+                        tab2D[l, c] = "2";
+                    }
+                    else if (bateau[compteur] == "torpilleur (2 cases)")
+                    {
+                        tab2D[l, c] = "1";
+                    }
                 }
-                
+            }
+        }
+        public void ConcatGrille( string[,] tab2D, out string resultat)
+        {
+            resultat = "";
+            for (int l = 0; l <= tab2D.GetLength(0) - 1; l++)
+            {
+                for (int c = 0; c <= tab2D.GetLength(1) - 1; c++)
+                {
+                    resultat = resultat + tab2D[l, c] + "     ";
+                }
+                resultat = resultat + "\n\n";
             }
         }
     }
