@@ -22,6 +22,8 @@ namespace BatailleNaval
             int premLigne;
             int dernColonne;
             int dernLigne;
+            int Ncases = 0;
+            int[] tAleat;
 
             Console.WriteLine("Souhaitez-vous jouer à deux ou tout seul ? Tapez deux ou seul");
             reponse = Console.ReadLine();
@@ -49,85 +51,31 @@ namespace BatailleNaval
                     dernLigne = int.Parse(Console.ReadLine());
                     Console.WriteLine("La colonne :");
                     dernColonne = int.Parse(Console.ReadLine());
-                    tools.AfficherBateau(premLigne, premColonne, dernLigne, dernColonne, ref bJgrille2D, bateau);
+                    tools.AfficherBateau(premLigne, premColonne, dernLigne, dernColonne, ref bJgrille2D,out resultat, Ncases);
+                    Ncases++;
                     tools.ConcatGrille(bJgrille2D, out resultat);
                     Console.WriteLine(resultat);
                 }
-                //tools.AfficherGrille(BJgrille2D, out alpha, out resultat);// grille du joueur où il placera ses bateaux
-                //Console.WriteLine("Placez le porte avion (5 cases)\n");
+                for (int compteur = 0; compteur < bateau.Length; compteur++)
+                {
+                    Console.WriteLine("Placez le " + bateau[compteur] + "\n");
 
-                //Console.WriteLine("Premières coordonnées :\n");
-                //Console.WriteLine("Choisissez la colonne où vous voulez placer votre bateau");
-                //premBordColonne = int.Parse(Console.ReadLine());
-                //Console.WriteLine("Choisissez la ligne où vous voulez placer votre bateau");
-                //premBordLigne = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Premières coordonnées :\n");
+                    Console.WriteLine("En sachant qu'il faut répondre en chiffre \nA -> 1\nB -> 2\nC -> 3\nD -> 4\nE -> 5\nF -> 6\nG -> 7\nH -> 8\nI -> 9\nJ -> 10\nChoisissez la ligne où vous voulez placer votre bateau :");
+                    tools.BatIA(tAleat);
+                    Console.WriteLine("La colonne :");
+                    premColonne = int.Parse(Console.ReadLine());
 
-                //Console.WriteLine("Dernières coordonnées :\n");
-                //Console.WriteLine("Choisissez la colonne où vous voulez placer votre bateau");
-                //dernBordColonne = int.Parse(Console.ReadLine());
-                //Console.WriteLine("Choisissez la ligne où vous voulez placer votre bateau");
-                //dernBordLigne = int.Parse(Console.ReadLine());
-                //tools.AfficherGrilleETBateau();
-
-                //Console.WriteLine("Placez le croiseur (4 cases)\n");
-
-                //Console.WriteLine("Premières coordonnées :\n");
-                //Console.WriteLine("Choisissez la colonne où vous voulez placer votre bateau");
-                //premBordColonne = int.Parse(Console.ReadLine());
-                //Console.WriteLine("Choisissez la ligne où vous voulez placer votre bateau");
-                //premBordLigne = int.Parse(Console.ReadLine());
-
-                //Console.WriteLine("Dernières coordonnées :\n");
-                //Console.WriteLine("Choisissez la colonne où vous voulez placer votre bateau");
-                //dernBordColonne = int.Parse(Console.ReadLine());
-                //Console.WriteLine("Choisissez la ligne où vous voulez placer votre bateau");
-                //dernBordLigne = int.Parse(Console.ReadLine());
-                //tools.AfficherGrilleETBateau();
-
-                //Console.WriteLine("Placez le contre-croiseur (3 cases)\n");
-
-                //Console.WriteLine("Premières coordonnées :\n");
-                //Console.WriteLine("Choisissez la colonne où vous voulez placer votre bateau");
-                //premBordColonne = int.Parse(Console.ReadLine());
-                //Console.WriteLine("Choisissez la ligne où vous voulez placer votre bateau");
-                //premBordLigne = int.Parse(Console.ReadLine());
-
-                //Console.WriteLine("Dernières coordonnées :\n");
-                //Console.WriteLine("Choisissez la colonne où vous voulez placer votre bateau");
-                //dernBordColonne = int.Parse(Console.ReadLine());
-                //Console.WriteLine("Choisissez la ligne où vous voulez placer votre bateau");
-                //dernBordLigne = int.Parse(Console.ReadLine());
-                //tools.AfficherGrilleETBateau();
-
-                //Console.WriteLine("Placez le sous-marin (3 cases)\n");
-
-                //Console.WriteLine("Premières coordonnées :\n");
-                //Console.WriteLine("Choisissez la colonne où vous voulez placer votre bateau");
-                //premBordColonne = int.Parse(Console.ReadLine());
-                //Console.WriteLine("Choisissez la ligne où vous voulez placer votre bateau");
-                //premBordLigne = int.Parse(Console.ReadLine());
-
-                //Console.WriteLine("Dernières coordonnées :\n");
-                //Console.WriteLine("Choisissez la colonne où vous voulez placer votre bateau");
-                //dernBordColonne = int.Parse(Console.ReadLine());
-                //Console.WriteLine("Choisissez la ligne où vous voulez placer votre bateau");
-                //dernBordLigne = int.Parse(Console.ReadLine());
-                //tools.AfficherGrilleETBateau();
-
-                //Console.WriteLine("Placez le torpilleur (2 cases)\n");
-
-                //Console.WriteLine("Premières coordonnées :\n");
-                //Console.WriteLine("Choisissez la colonne où vous voulez placer votre bateau");
-                //premBordColonne = int.Parse(Console.ReadLine());
-                //Console.WriteLine("Choisissez la ligne où vous voulez placer votre bateau");
-                //premBordLigne = int.Parse(Console.ReadLine());
-
-                //Console.WriteLine("Dernières coordonnées :\n");
-                //Console.WriteLine("Choisissez la colonne où vous voulez placer votre bateau");
-                //dernBordColonne = int.Parse(Console.ReadLine());
-                //Console.WriteLine("Choisissez la ligne où vous voulez placer votre bateau");
-                //dernBordLigne = int.Parse(Console.ReadLine());
-                //tools.AfficherGrilleETBateau();
+                    Console.WriteLine("Dernières coordonnées :\n");
+                    Console.WriteLine("En sachant qu'il faut répondre en chiffre \nA -> 1\nB -> 2\nC -> 3\nD -> 4\nE -> 5\nF -> 6\nG -> 7\nH -> 8\nI -> 9\nJ -> 10\nChoisissez la ligne où vous voulez placer votre bateau :");
+                    dernLigne = int.Parse(Console.ReadLine());
+                    Console.WriteLine("La colonne :");
+                    dernColonne = int.Parse(Console.ReadLine());
+                    tools.AfficherBateau(premLigne, premColonne, dernLigne, dernColonne, ref bJgrille2D, out resultat, Ncases);
+                    Ncases++;
+                    tools.ConcatGrille(bJgrille2D, out resultat);
+                    Console.WriteLine(resultat);
+                }
             }
         }
     }

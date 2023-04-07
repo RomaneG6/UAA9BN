@@ -36,35 +36,48 @@ namespace BatailleNaval
                 }
             }
         }
-        public void AfficherBateau(int premLigne, int premColonne, int dernLigne, int dernColonne, ref string[,] tab2D, string[] bateau)
+        public void AfficherBateau(int premLigne, int premColonne, int dernLigne, int dernColonne, ref string[,] tab2D, out string resultat, int Ncases)
         {
-            int compteur = 0;
+            resultat = "";
             for (int l = premLigne; l <= dernLigne; l++)
             {
                 for (int c = premColonne; c <= dernColonne; c++)
                 {
-                    if (bateau[compteur] == "porte avion (5 cases)")
+                    if (Ncases == 0)
                     {
                         tab2D[l, c] = "5";
+                        resultat = resultat + tab2D[l, c];
                     }
-
-                    else if (bateau[compteur] == "croiseur (4 cases)")
+                    else if (Ncases == 1)
                     {
                         tab2D[l, c] = "4";
+                        resultat = resultat + tab2D[l, c];
                     }
-                    else if (bateau[compteur] == "contre-croiseur (3 cases)")
+                    else if (Ncases == 2)
                     {
                         tab2D[l, c] = "3";
+                        resultat = resultat + tab2D[l, c];
                     }
-                    else if (bateau[compteur] == "sous-marin (3 cases)")
+                    else if (Ncases == 3)
                     {
                         tab2D[l, c] = "2";
+                        resultat = resultat + tab2D[l, c];
                     }
-                    else if (bateau[compteur] == "torpilleur (2 cases)")
+                    else if (Ncases == 4)
                     {
                         tab2D[l, c] = "1";
-                    }
-                }
+                        resultat = resultat + tab2D[l, c];
+                    } 
+                }  
+            }
+        }
+        public void BatIA(int[] tAleat)
+        {
+            Random nAleat = new Random();
+            tAleat = new int[11];
+            for (int i = 1; i <= 11 - 1; i++)
+            {
+                tAleat[i] = nAleat.Next(1, 10);
             }
         }
         public void ConcatGrille( string[,] tab2D, out string resultat)
