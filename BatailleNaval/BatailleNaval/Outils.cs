@@ -71,14 +71,25 @@ namespace BatailleNaval
                 }  
             }
         }
-        public void BatIA(int[] tAleat)
+        public void BatIA(int[] tAleat, out int nDimBat)
         {
+            int i;
             Random nAleat = new Random();
-            tAleat = new int[11];
-            for (int i = 1; i <= 11 - 1; i++)
+            for (i = 1; i <= 11 - 1; i++)
             {
                 tAleat[i] = nAleat.Next(1, 10);
             }
+            nDimBat = nAleat;
+        }
+        public void SensBatIA(string[] sensBat, out string choiSens)
+        {
+            int i;
+            Random choix = new Random();
+            for (i = 0; i <= 2 - 1; i++)
+            {
+                sensBat[i] = choix.Next(0, 1);
+            }
+            choiSens = sensBat[i];
         }
         public void ConcatGrille( string[,] tab2D, out string resultat)
         {
