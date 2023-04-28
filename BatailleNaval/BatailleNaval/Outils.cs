@@ -46,51 +46,46 @@ namespace BatailleNaval
                     if (Ncases == 0)
                     {
                         tab2D[l, c] = "5";
-                        resultat = resultat + tab2D[l, c];
+                        resultat += tab2D[l, c];
                     }
                     else if (Ncases == 1)
                     {
                         tab2D[l, c] = "4";
-                        resultat = resultat + tab2D[l, c];
+                        resultat += tab2D[l, c];
                     }
                     else if (Ncases == 2)
                     {
                         tab2D[l, c] = "3";
-                        resultat = resultat + tab2D[l, c];
+                        resultat += tab2D[l, c];
                     }
                     else if (Ncases == 3)
                     {
                         tab2D[l, c] = "2";
-                        resultat = resultat + tab2D[l, c];
+                        resultat += tab2D[l, c];
                     }
                     else if (Ncases == 4)
                     {
                         tab2D[l, c] = "1";
-                        resultat = resultat + tab2D[l, c];
+                        resultat += tab2D[l, c];
                     } 
                 }  
             }
         }
-        public void BatIA(int[] tAleat, out int nDimBat)
+        public void BatIA(ref int sensBat)
         {
-            int i;
             Random nAleat = new Random();
-            for (i = 1; i <= 11 - 1; i++)
-            {
-                tAleat[i] = nAleat.Next(1, 10);
-            }
-            nDimBat = nAleat;
+            sensBat = nAleat.Next(1, 3);
         }
-        public void SensBatIA(string[] sensBat, out string choiSens)
-        {
-            int i;
-            Random choix = new Random();
-            for (i = 0; i <= 2 - 1; i++)
-            {
-                sensBat[i] = choix.Next(0, 1);
-            }
-            choiSens = sensBat[i];
-        }
+        //public void SensBatIA(string[] sensBat, out string choiSens)
+        //{
+        //    int i;
+        //    Random choix = new Random();
+        //    for (i = 0; i <= 2 - 1; i++)
+        //    {
+        //        sensBat[i] = choix.Next(0, 1);
+        //    }
+        //    choiSens = sensBat[i];
+        //}
         public void ConcatGrille( string[,] tab2D, out string resultat)
         {
             resultat = "";
