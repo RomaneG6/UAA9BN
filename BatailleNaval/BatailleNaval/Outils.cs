@@ -6,7 +6,7 @@ namespace BatailleNaval
 {
     internal class Outils
     {
-        public void AfficherGrille(string[,] tab2D, out string[] alpha, out string resultat)
+        public void AfficherGrille(string[,] tab2D, out string[] alpha, out string resultat)//Création de la grille
         {
             alpha = new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J" };
             resultat = "";
@@ -36,7 +36,7 @@ namespace BatailleNaval
                 }
             }
         }
-        public void AfficherBateau(int premLigne, int premColonne, int dernLigne, int dernColonne, ref string[,] tab2D, out string resultat, int Ncases)
+        public void AfficherBateau(int premLigne, int premColonne, int dernLigne, int dernColonne, ref string[,] tab2D, out string resultat, int Ncases)//placer les bateau dans la grille
         {
             resultat = "";
             for (int l = premLigne; l <= dernLigne; l++)
@@ -45,27 +45,27 @@ namespace BatailleNaval
                 {
                     if (Ncases == 0)
                     {
-                        tab2D[l, c] = "5";
+                        tab2D[l, c] = "5";//porte avion
                         resultat += tab2D[l, c];
                     }
                     else if (Ncases == 1)
                     {
-                        tab2D[l, c] = "4";
+                        tab2D[l, c] = "4";//croiseur
                         resultat += tab2D[l, c];
                     }
                     else if (Ncases == 2)
                     {
-                        tab2D[l, c] = "3";
+                        tab2D[l, c] = "3";//contre-croiseur
                         resultat += tab2D[l, c];
                     }
                     else if (Ncases == 3)
                     {
-                        tab2D[l, c] = "2";
+                        tab2D[l, c] = "2";//sous - marin
                         resultat += tab2D[l, c];
                     }
                     else if (Ncases == 4)
                     {
-                        tab2D[l, c] = "1";
+                        tab2D[l, c] = "1";//torpilleur
                         resultat += tab2D[l, c];
                     } 
                 }  
@@ -76,17 +76,7 @@ namespace BatailleNaval
             Random nAleat = new Random();
             sensBat = nAleat.Next(1, 3);
         }
-        //public void SensBatIA(string[] sensBat, out string choiSens)
-        //{
-        //    int i;
-        //    Random choix = new Random();
-        //    for (i = 0; i <= 2 - 1; i++)
-        //    {
-        //        sensBat[i] = choix.Next(0, 1);
-        //    }
-        //    choiSens = sensBat[i];
-        //}
-        public void ConcatGrille( string[,] tab2D, out string resultat)
+        public void ConcatGrille( string[,] tab2D, out string resultat)//Concatenation de la grille avec les bateau
         {
             resultat = "";
             for (int l = 0; l <= tab2D.GetLength(0) - 1; l++)

@@ -19,7 +19,6 @@ namespace BatailleNaval
             string[] torpilleur = new string[2];
             string reponse = "";
             string[] bateau = new string[] { "porte avion (5 cases)", "croiseur (4 cases)", "contre-croiseur (3 cases)", "sous-marin (3 cases)", "torpilleur (2 cases)" };
-            int sensBat;
             int premColonne;
             int premLigne;
             int dernColonne;
@@ -50,8 +49,8 @@ namespace BatailleNaval
                     string premCL;
                     do
                     {
-                        Console.WriteLine("Écris un nombre entier");
                         premCL = Console.ReadLine();
+                        Console.WriteLine("Écris un nombre entier");
 
                     } while (!int.TryParse(premCL, out premLigne));
 
@@ -60,8 +59,8 @@ namespace BatailleNaval
                     string premCC;
                     do
                     {
-                        Console.WriteLine("Ecris un entier, T con");
                         premCC = Console.ReadLine();
+                        Console.WriteLine("Écris un nombre entier");
 
                     } while (!int.TryParse(premCC, out premColonne));
 
@@ -71,22 +70,19 @@ namespace BatailleNaval
                     string dernCL;
                     do
                     {
-                        Console.WriteLine("Ecris un entier, tu peux pas être plus con...");
                         dernCL = Console.ReadLine();
+                        Console.WriteLine("Écris un nombre entier");
 
                     } while (!int.TryParse(dernCL, out dernLigne));
 
                     Console.WriteLine("La colonne :");
-                    dernColonne = int.Parse(Console.ReadLine());
                     string dernCC;
                     do
                     {
-                        Console.WriteLine("Ecris un entier, tu es un danger pour la société...");
-                        Console.WriteLine("\n\n\nRetourne à l'hopital");
-
                         dernCC = Console.ReadLine();
+                        Console.WriteLine("Écris un nombre entier");
 
-                    } while (!int.TryParse(dernCC, out dernLigne));
+                    } while (!int.TryParse(dernCC, out dernColonne));
                     tools.AfficherBateau(premLigne, premColonne, dernLigne, dernColonne, ref bJgrille2D, out resultat, Ncases);
                     Ncases++;
                     tools.ConcatGrille(bJgrille2D, out resultat);
