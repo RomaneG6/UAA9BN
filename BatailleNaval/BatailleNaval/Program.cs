@@ -8,9 +8,18 @@ namespace BatailleNaval
         {
             Outils tools = new Outils();
             string resultat;
+            string resultat1;
+            string resultat2;
+            string resultat1A = "";
+            string resultat2A = "";
+
             string[,] bJgrille2D = new string[11, 11];
             string[,] bJ1grille2D = new string[11, 11];
             string[,] bJ2grille2D = new string[11, 11];
+
+            string[,] videGrille1 = new string[11, 11];
+            string[,] videGrille2 = new string[11, 11];
+
             string[] alpha;
             string[] porteA = new string[5];
             string[] croisseur = new string[4];
@@ -18,212 +27,142 @@ namespace BatailleNaval
             string[] sousM = new string[3];
             string[] torpilleur = new string[2];
             string reponse = "";
+            string recom = "oui";
             string[] bateau = new string[] { "porte avion (5 cases)", "croiseur (4 cases)", "contre-croiseur (3 cases)", "sous-marin (3 cases)", "torpilleur (2 cases)" };
-            int premColonne;
-            int premLigne;
-            int dernColonne;
-            int dernLigne;
-            int Ncases = 0; //Permet de placer les bateaux par taille décroissante
-            int[] tAleat = new int[11];
+            string question;
+            int n;
+            int premColonne = 0;
+            int premLigne = 0;
+            int dernColonne = 0;
+            int dernLigne = 0;
 
-            Console.WriteLine("Souhaitez-vous jouer à deux ou tout seul ? Tapez deux ou seul");
+            int premColonne1 = 0;
+            int premLigne1 = 0;
+            int dernColonne1 = 0;
+            int dernLigne1 = 0;
+
+            int premColonne2 = 0;
+            int premLigne2 = 0;
+            int dernColonne2 = 0;
+            int dernLigne2 = 0;
+
+            string list;
+
+            int c2;// c'est le joueur 1 qui tape les coordonnées mais ce sont celles du joueur 2
+            int l2;
+
+            int c1;
+            int l1;
+
+            int n1 = 0;
+            int n2 = 0;
+            int Ncases = 0; //Permet de placer les bateaux par taille décroissante
+            int Ncases1 = 0;
+            int Ncases2 = 0;
+
+            Console.WriteLine("Souhaitez-vous jouer à deux ? Tapez deux");
             reponse = Console.ReadLine();
 
-            if (reponse == "seul")
+            //if (reponse == "seul")
+            //{
+
+            //    Console.Clear();
+            //    tools.AfficherGrille(bJgrille2D, out alpha, out resultat);
+            //    tools.ConcatGrille(bJgrille2D, ref resultat);
+            //    Console.WriteLine(resultat);
+            //    Console.WriteLine("Placer les différents bateau à votre disposition :\n\n");
+            //    Console.WriteLine("Ecrivez d'abord les extémités de la où vous voulez mettre vos bateau\nEn commmencant par les premières extrémités puis les dernières\n");
+            //    Console.WriteLine("répondre en chiffre \nA -> 1\nB -> 2\nC -> 3\nD -> 4\nE -> 5\nF -> 6\nG -> 7\nH -> 8\nI -> 9\nJ -> 10\n");
+
+            //    tools.Encodage(bateau, ref premLigne, ref premColonne, ref dernLigne, ref dernColonne, Ncases, out resultat, ref bJgrille2D);
+            //    tools.ConcatGrille(bJgrille2D, ref resultat);
+            //    Console.WriteLine(resultat);
+            //}
+            while (recom == "oui")
             {
-                Console.Clear();
-                tools.AfficherGrille(bJgrille2D, out alpha, out resultat);//grille du joueur où il essaiera de deviner les bateau de l'adversaire
-                tools.ConcatGrille(bJgrille2D, out resultat);
-                Console.WriteLine(resultat);
-                Console.WriteLine("Placer les différents bateau à votre disposition :\n\n");
-                Console.WriteLine("Ecrivez d'abord les extémités de la où vous voulez mettre vos bateau\nEn commmencant par les premières extrémités puis les dernières\n");
-                Console.WriteLine("répondre en chiffre \nA -> 1\nB -> 2\nC -> 3\nD -> 4\nE -> 5\nF -> 6\nG -> 7\nH -> 8\nI -> 9\nJ -> 10\n");
-
-                for (int compteur = 0; compteur < bateau.Length; compteur++)
+                if (reponse == "deux")
                 {
-                    Console.WriteLine("Placez le " + bateau[compteur] + "\n");
+                    Console.Clear();
 
-                    Console.WriteLine("Premières coordonnées :\n");
-                    Console.WriteLine("Choisissez la ligne où vous voulez placer votre bateau :");
+                    Console.WriteLine("Joueur 1 vous pouvez encoder vos bateau :");
+                    tools.AfficherGrille(bJ1grille2D, out alpha, out resultat1);
+                    tools.ConcatGrille(bJ1grille2D, ref resultat1);
+                    Console.WriteLine(resultat1);
+                    Console.WriteLine("Placer les différents bateau à votre disposition :\n\n");
+                    Console.WriteLine("Ecrivez d'abord les extémités de la où vous voulez mettre vos bateau\nEn commmencant par les premières extrémités puis les dernières\n");
+                    Console.WriteLine("répondre en chiffre \nA -> 1\nB -> 2\nC -> 3\nD -> 4\nE -> 5\nF -> 6\nG -> 7\nH -> 8\nI -> 9\nJ -> 10\n");
+                    tools.Encodage(bateau, ref premLigne1, ref premColonne1, ref dernLigne1, ref dernColonne1, Ncases1, out resultat1, ref bJ1grille2D, out list);
+                    
+                    Console.WriteLine("mtn c'est au tour du Joueur 2");
+                    tools.AfficherGrille(bJ2grille2D, out alpha, out resultat2);
+                    tools.ConcatGrille(bJ2grille2D, ref resultat2);
+                    Console.WriteLine(resultat2);
+                    tools.Encodage(bateau, ref premLigne2, ref premColonne2, ref dernLigne2, ref dernColonne2, Ncases2, out resultat2, ref bJ2grille2D, out list);
 
-                    string premCL;
-                    do
+                    while (n1 != 5 || n2 != 5)
                     {
-                        premCL = Console.ReadLine();
-                        Console.WriteLine("Écris un nombre entier");
+                        tools.AfficherGrille(videGrille1, out alpha, out resultat1A);//grille du joueur où il essaiera de deviner les bateau de l'adversaire
+                        tools.ConcatGrille(videGrille1, ref resultat1A);
+                        Console.WriteLine(resultat1A);
+                        Console.WriteLine("Joueur 1 essayez de diviner les positions des bateaus de l'adversaire");
+                        question = "ligne :";
+                        tools.TryParse(question, out l2);
 
-                    } while (!int.TryParse(premCL, out premLigne));
+                        question = "Colonne :";
+                        tools.TryParse(question, out c2);
+                        tools.Touche(ref videGrille1, c2, l2, premLigne2, premColonne2, dernLigne2, dernColonne2, ref resultat1A);
+                        if (videGrille1[l2, c2] == "O")
+                        {
+                            if (videGrille1[premLigne2, dernLigne2] == "O" && videGrille1[premColonne2, dernColonne2] == "O")
+                            {
+                                Console.WriteLine("GG! Vous avez trouvé un bateau de " + (dernLigne2 - premLigne2) + (dernColonne2 - premColonne2));
+                                n1++;
+                            }
+                        }
 
-                    Console.WriteLine("mtn La colonne :");
+                        tools.ConcatGrille(videGrille1, ref resultat1A);
+                        Console.WriteLine(resultat2A);
 
-                    string premCC;
-                    do
+                        tools.AfficherGrille(videGrille2, out alpha, out resultat2A);//grille du joueur où il essaiera de deviner les bateau de l'adversaire
+                        tools.ConcatGrille(videGrille2, ref resultat2A);
+                        Console.WriteLine(resultat2A);
+                        Console.WriteLine("Joueur 2 essayez de diviner les positions des bateaus de l'adversaire");
+                        question = "ligne :";
+                        tools.TryParse(question, out l1);
+
+                        question = "Colonne :";
+                        tools.TryParse(question, out c1);
+                        tools.Touche(ref videGrille2, c1, l1, premLigne1, premColonne1, dernLigne1, dernColonne1, ref resultat2A);
+
+                        if (videGrille2[l2, c2] == "O")
+                        {
+                            if (videGrille2[premLigne1, dernLigne1] == "O" && videGrille1[premColonne1, dernColonne1] == "O")
+                            {
+                                Console.WriteLine("GG! Vous avez trouvé un bateau de " + (dernLigne1 - premLigne1) + (dernColonne1 - premColonne1));
+                                n2++;
+                            }
+                        }
+                    }
+                    if (n1 == 5)
                     {
-                        premCC = Console.ReadLine();
-                        Console.WriteLine("Écris un nombre entier");
-
-                    } while (!int.TryParse(premCC, out premColonne));
-
-                    Console.WriteLine("Dernières coordonnées :\n");
-                    Console.WriteLine("Choisissez la ligne où vous voulez placer votre bateau :");
-
-                    string dernCL;
-                    do
+                        Console.WriteLine("Félicitation joueur 1 !!!!");
+                    }
+                    else if (n2 == 5)
                     {
-                        dernCL = Console.ReadLine();
-                        Console.WriteLine("Écris un nombre entier");
-
-                    } while (!int.TryParse(dernCL, out dernLigne));
-
-                    Console.WriteLine("La colonne :");
-                    string dernCC;
-                    do
+                        Console.WriteLine("Félicitation joueur 2 !!!!");
+                    }
+                    Console.WriteLine("Voulez-vous rejouer ?tapez oui/non");
+                    recom = Console.ReadLine();
+                    if (recom != "oui")
                     {
-                        dernCC = Console.ReadLine();
-                        Console.WriteLine("Écris un nombre entier");
-
-                    } while (!int.TryParse(dernCC, out dernColonne));
-                    tools.AfficherBateau(premLigne, premColonne, dernLigne, dernColonne, ref bJgrille2D, out resultat, Ncases);
-                    Ncases++;
-                    tools.ConcatGrille(bJgrille2D, out resultat);
-                    Console.WriteLine(resultat);
+                        Console.WriteLine("Merci!! d'avoir jouer :)");                    
+                    }
                 }
-                tools.ConcatGrille(bJ1grille2D, out resultat);
-                Console.WriteLine(resultat);
-            }
-            else if (reponse == "deux")
-            {
-                Console.Clear();
-                tools.AfficherGrille(bJ1grille2D, out alpha, out resultat);//grille du joueur où il essaiera de deviner les bateau de l'adversaire
-                tools.ConcatGrille(bJ1grille2D, out resultat);
-                Console.WriteLine(resultat);
-                Console.WriteLine("Placer les différents bateau à votre disposition :\n\n");
-                Console.WriteLine("Ecrivez d'abord les extémités de la où vous voulez mettre vos bateau\nEn commmencant par les premières extrémités puis les dernières\n");
-                Console.WriteLine("répondre en chiffre \nA -> 1\nB -> 2\nC -> 3\nD -> 4\nE -> 5\nF -> 6\nG -> 7\nH -> 8\nI -> 9\nJ -> 10\n");
-
-                for (int compteur = 0; compteur < bateau.Length; compteur++)
+                else
                 {
-                    Console.WriteLine("Placez le " + bateau[compteur] + "\n");
-
-                    Console.WriteLine("Premières coordonnées :\n");
-                    Console.WriteLine("Choisissez la ligne où vous voulez placer votre bateau :");
-
-                    string premCL;
-                    do
-                    {
-                        Console.WriteLine("Ecris un nombre entier");
-                        premCL = Console.ReadLine();
-
-                    } while (!int.TryParse(premCL, out premLigne));
-
-                    Console.WriteLine("mtn La colonne :");
-
-                    string premCC;
-                    do
-                    {
-                        Console.WriteLine("Ecris un entier, T con");
-                        premCC = Console.ReadLine();
-
-                    } while (!int.TryParse(premCC, out premColonne));
-
-                    Console.WriteLine("Dernières coordonnées :\n");
-                    Console.WriteLine("Choisissez la ligne où vous voulez placer votre bateau :");
-
-                    string dernCL;
-                    do
-                    {
-                        Console.WriteLine("Ecris un entier, tu peux pas être plus con...");
-                        dernCL = Console.ReadLine();
-
-                    } while (!int.TryParse(dernCL, out dernLigne));
-
-                    Console.WriteLine("La colonne :");
-
-                    string dernCC;
-                    do
-                    {
-                        Console.WriteLine("Ecris un entier, tu es un danger pour la société...");
-                        Console.WriteLine("\n\n\nRetourne à l'hopital");
-
-                        dernCC = Console.ReadLine();
-
-                    } while (!int.TryParse(dernCC, out dernColonne));
-                    tools.AfficherBateau(premLigne, premColonne, dernLigne, dernColonne, ref bJ1grille2D, out resultat, Ncases);
-                    Ncases++;
-                    tools.ConcatGrille(bJ1grille2D, out resultat);
-                    Console.WriteLine(resultat);
+                    Console.WriteLine("Tu sais pas lire ou quoi? J'ai dis seul ou à deux !");
+                    Console.ReadLine();
                 }
-
-                Console.Clear();
-                Console.WriteLine("mtn c'est au tour du joueur 2");
-                tools.AfficherGrille(bJ2grille2D, out alpha, out resultat);//grille du joueur où il essaiera de deviner les bateau de l'adversaire
-                tools.ConcatGrille(bJ2grille2D, out resultat);
-                Console.WriteLine(resultat);
-                Console.WriteLine("Placer les différents bateau à votre disposition :\n\n");
-                Console.WriteLine("Ecrivez d'abord les extémités de la où vous voulez mettre vos bateau\nEn commmencant par les premières extrémités puis les dernières\n");
-                Console.WriteLine("répondre en chiffre \nA -> 1\nB -> 2\nC -> 3\nD -> 4\nE -> 5\nF -> 6\nG -> 7\nH -> 8\nI -> 9\nJ -> 10\n");
-
-                for (int compteur = 0; compteur < bateau.Length; compteur++)
-                {
-                    Console.WriteLine("Placez le " + bateau[compteur] + "\n");
-
-                    Console.WriteLine("Premières coordonnées :\n");
-                    Console.WriteLine("Choisissez la ligne où vous voulez placer votre bateau :");
-
-                    string premCL;
-                    do
-                    {
-                        Console.WriteLine("Ecris un nombre entier");
-                        premCL = Console.ReadLine();
-
-                    } while (!int.TryParse(premCL, out premLigne));
-
-                    Console.WriteLine("mtn La colonne :");
-
-                    string premCC;
-                    do
-                    {
-                        Console.WriteLine("Ecris un entier, T con");
-                        premCC = Console.ReadLine();
-
-                    } while (!int.TryParse(premCC, out premColonne));
-
-                    Console.WriteLine("Dernières coordonnées :\n");
-                    Console.WriteLine("Choisissez la ligne où vous voulez placer votre bateau :");
-
-                    string dernCL;
-                    do
-                    {
-                        Console.WriteLine("Ecris un entier, tu peux pas être plus con...");
-                        dernCL = Console.ReadLine();
-
-                    } while (!int.TryParse(dernCL, out dernLigne));
-
-                    Console.WriteLine("La colonne :");
-                    dernColonne = int.Parse(Console.ReadLine());
-                    string dernCC;
-                    do
-                    {
-                        Console.WriteLine("Ecris un entier, tu es un danger pour la société...");
-                        Console.WriteLine("\n\n\nRetourne à l'hopital");
-
-                        dernCC = Console.ReadLine();
-
-                    } while (!int.TryParse(dernCC, out dernLigne));
-                    tools.AfficherBateau(premLigne, premColonne, dernLigne, dernColonne, ref bJ2grille2D, out resultat, Ncases);
-                    Ncases++;
-                    tools.ConcatGrille(bJ2grille2D, out resultat);
-                    Console.WriteLine(resultat);
-                }
-                Console.Clear();
-
-                tools.ConcatGrille(bJ1grille2D, out resultat);
-                Console.WriteLine(resultat);
-            }
-            else
-            {
-                Console.WriteLine("Tu sais pas lire ou quoi? J'ai dis seul ou à deux !");
-                Console.ReadLine();
             }
         }
     }
