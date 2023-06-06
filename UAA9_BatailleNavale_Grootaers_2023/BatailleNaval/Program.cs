@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace BatailleNaval
 {
@@ -46,7 +47,20 @@ namespace BatailleNaval
             int dernColonne2 = 0;
             int dernLigne2 = 0;
 
-            string list;
+            int[] listPL;
+            int[] listPC;
+            int[] listDL;
+            int[] listDC;
+
+            int[] listPL1;
+            int[] listPC1;
+            int[] listDL1;
+            int[] listDC1;
+
+            int[] listPL2;
+            int[] listPC2;
+            int[] listDL2;
+            int[] listDC2;
 
             int c2;// c'est le joueur 1 qui tape les coordonnées mais ce sont celles du joueur 2
             int l2;
@@ -91,13 +105,14 @@ namespace BatailleNaval
                     Console.WriteLine("Placer les différents bateau à votre disposition :\n\n");
                     Console.WriteLine("Ecrivez d'abord les extémités de la où vous voulez mettre vos bateau\nEn commmencant par les premières extrémités puis les dernières\n");
                     Console.WriteLine("répondre en chiffre \nA -> 1\nB -> 2\nC -> 3\nD -> 4\nE -> 5\nF -> 6\nG -> 7\nH -> 8\nI -> 9\nJ -> 10\n");
-                    tools.Encodage(bateau, ref premLigne1, ref premColonne1, ref dernLigne1, ref dernColonne1, Ncases1, out resultat1, ref bJ1grille2D, out list);
-                    
+                    tools.Encodage(bateau, ref premLigne1, ref premColonne1, ref dernLigne1, ref dernColonne1, Ncases1, out resultat1, ref bJ1grille2D, out listPL1, out listPC1, out listDL1, out listDC1);
+
+
                     Console.WriteLine("mtn c'est au tour du Joueur 2");
                     tools.AfficherGrille(bJ2grille2D, out alpha, out resultat2);
                     tools.ConcatGrille(bJ2grille2D, ref resultat2);
                     Console.WriteLine(resultat2);
-                    tools.Encodage(bateau, ref premLigne2, ref premColonne2, ref dernLigne2, ref dernColonne2, Ncases2, out resultat2, ref bJ2grille2D, out list);
+                    tools.Encodage(bateau, ref premLigne2, ref premColonne2, ref dernLigne2, ref dernColonne2, Ncases2, out resultat2, ref bJ2grille2D, out listPL2, out listPC2, out listDL2, out listDC2);
 
                     while (n1 != 5 || n2 != 5)
                     {
@@ -110,7 +125,7 @@ namespace BatailleNaval
 
                         question = "Colonne :";
                         tools.TryParse(question, out c2);
-                        tools.Touche(ref videGrille1, c2, l2, premLigne2, premColonne2, dernLigne2, dernColonne2, ref resultat1A);
+                        tools.Touche(ref videGrille1, c2, l2, listPL2, listPC2, listDL2, listDC2, ref resultat1A);
                         if (videGrille1[l2, c2] == "O")
                         {
                             if (videGrille1[premLigne2, dernLigne2] == "O" && videGrille1[premColonne2, dernColonne2] == "O")
@@ -132,7 +147,7 @@ namespace BatailleNaval
 
                         question = "Colonne :";
                         tools.TryParse(question, out c1);
-                        tools.Touche(ref videGrille2, c1, l1, premLigne1, premColonne1, dernLigne1, dernColonne1, ref resultat2A);
+                        tools.Touche(ref videGrille2, c1, l1, listPL1, listPC1, listDL1, listDC1, ref resultat2A);
 
                         if (videGrille2[l2, c2] == "O")
                         {

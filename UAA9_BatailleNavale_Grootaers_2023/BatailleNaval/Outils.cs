@@ -55,15 +55,19 @@ namespace BatailleNaval
         /// <param name="Ncases">compteur du tableau bateau</param>
         /// <param name="resultat">résultat qui affiche les coordonnées encodée</param>
         /// <param name="tab2D">grille du jeux ou on affiche les tableau</param>
-        ///
-        public void Encodage(string[] bateau, ref int premLigne, ref int premColonne, ref int dernLigne, ref int dernColonne, int Ncases, out string resultat, ref string[,] tab2D, out int listPL, out int listPC, out int listDL, out int listDC)
+        ///<param name="listPL">tableau où les coordonnées des bateau sont enregistrée</param>
+        ///<param name="listPC">tableau où les coordonnées des bateau sont enregistrée</param>
+        ///<param name="listDL">tableau où les coordonnées des bateau sont enregistrée</param>
+        ///<param name="listDC">tableau où les coordonnées des bateau sont enregistrée</param>
+        public void Encodage(string[] bateau, ref int premLigne, ref int premColonne, ref int dernLigne, ref int dernColonne, int Ncases, out string resultat, ref string[,] tab2D, out int[] listPL, out int[] listPC, out int[] listDL, out int[] listDC)
         {
+            listPL = new int[5];
+            listPC = new int[5];
+            listDL = new int[5];
+            listDC = new int[5];
             bool erreur = true;
             string array;
-            listPL = 0;
-            listPC = 0;
-            listDL = 0;
-            listDC = 0;
+            int i = 0;
             resultat = "";
             string question;
             for (int compteur = 0; compteur < bateau.Length; compteur++)
@@ -76,30 +80,30 @@ namespace BatailleNaval
                     question = "Choisissez la ligne où vous voulez placer votre bateau :";
 
                     TryParse(question, out premLigne);
-                    listPL = listPL + premLigne;
-                    array = listPL + ",";
+                    listPL[i] = premLigne;
+                    array = listPL[i] + ",";
                     Console.WriteLine(array);
 
                     question = "mtn La colonne :";
 
                     TryParse(question, out premColonne);
-                    listPC = listPC + premLigne;
-                    array = listPC + ",";
+                    listPC[i] = premColonne;
+                    array = listPC[i] + ",";
                     Console.WriteLine(array);
 
                     Console.WriteLine("Dernières coordonnées :\n");
                     question = "Choisissez la ligne où vous voulez placer votre bateau :";
 
                     TryParse(question, out dernLigne);
-                    listDL = listDL + premLigne;
-                    array = listDL + ",";
+                    listDL[i] = dernLigne;
+                    array = listDL[i] + ",";
                     Console.WriteLine(array);
 
                     question = "La colonne :";
 
                     TryParse(question, out dernColonne);
-                    listDC = listDC + premLigne;
-                    array = listDC + ",";
+                    listDC[i] = dernColonne;
+                    array = listDC[i] + ",";
                     Console.WriteLine(array);
                     if (compteur == 1)
                     {
@@ -211,6 +215,7 @@ namespace BatailleNaval
                             erreur = true;
                         }
                     }
+                    i++;
                 }
                
                 AfficherBateau(premLigne, premColonne, dernLigne, dernColonne, ref tab2D, out resultat, Ncases);
@@ -311,12 +316,12 @@ namespace BatailleNaval
         /// <param name="tab2D">grille du jeux ou on affiche les tableau</param>
         /// <param name="c2">Coordonnée colonne pour chercher les bateaux de l’adversaire donnée par le joueur</param>
         /// <param name="l2">Coordonnée ligne pour chercher les bateaux de l’adversaire donnée par le joueur</param>
-        /// <param name="premLigne">première coordonnée ligne donnée par le joueur </param>
-        /// <param name="premColonne">première coordonnée Colonne donnée par le joueur </param>
-        /// <param name="dernLigne">dernière coordonnée ligne donnée par le joueur </param>
-        /// <param name="dernColonne">dernière coordonnée Colonne donnée par le joueur </param>
+        ///<param name="listPL">tableau où les coordonnées des bateau sont enregistrée</param>
+        ///<param name="listPC">tableau où les coordonnées des bateau sont enregistrée</param>
+        ///<param name="listDL">tableau où les coordonnées des bateau sont enregistrée</param>
+        ///<param name="listDC">tableau où les coordonnées des bateau sont enregistrée</param>
         /// <param name="resultat">résultat qui affiche les coordonnées encodée</param>
-        public void Touche(ref string[,] tab2D, int c2, int l2, int listPL, int listPC, int listDL, int listDC, ref string resultat)
+        public void Touche(ref string[,] tab2D, int c2, int l2, int[] listPL, int[] listPC, int[] listDL, int[] listDC, ref string resultat)
         {
             resultat = "";
             int l = l2;
