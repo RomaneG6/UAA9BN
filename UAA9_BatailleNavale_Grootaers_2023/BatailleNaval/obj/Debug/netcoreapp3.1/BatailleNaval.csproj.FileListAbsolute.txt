@@ -39,3 +39,17 @@ C:\Users\roman\OneDrive\Documents\Progra\UAA11\UAA9BN\BatailleNaval\BatailleNava
 C:\Users\roman\OneDrive\Documents\Progra\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.dll
 C:\Users\roman\OneDrive\Documents\Progra\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.pdb
 C:\Users\roman\OneDrive\Documents\Progra\UAA11\UAA9BN\BatailleNaval\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.genruntimeconfig.cache
+H:\UAA9BN\UAA9_BatailleNavale_Grootaers_2023\BatailleNaval\bin\Debug\netcoreapp3.1\BatailleNaval.exe
+H:\UAA9BN\UAA9_BatailleNavale_Grootaers_2023\BatailleNaval\bin\Debug\netcoreapp3.1\BatailleNaval.deps.json
+H:\UAA9BN\UAA9_BatailleNavale_Grootaers_2023\BatailleNaval\bin\Debug\netcoreapp3.1\BatailleNaval.runtimeconfig.json
+H:\UAA9BN\UAA9_BatailleNavale_Grootaers_2023\BatailleNaval\bin\Debug\netcoreapp3.1\BatailleNaval.runtimeconfig.dev.json
+H:\UAA9BN\UAA9_BatailleNavale_Grootaers_2023\BatailleNaval\bin\Debug\netcoreapp3.1\BatailleNaval.dll
+H:\UAA9BN\UAA9_BatailleNavale_Grootaers_2023\BatailleNaval\bin\Debug\netcoreapp3.1\BatailleNaval.pdb
+H:\UAA9BN\UAA9_BatailleNavale_Grootaers_2023\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.csproj.AssemblyReference.cache
+H:\UAA9BN\UAA9_BatailleNavale_Grootaers_2023\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.GeneratedMSBuildEditorConfig.editorconfig
+H:\UAA9BN\UAA9_BatailleNavale_Grootaers_2023\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.AssemblyInfoInputs.cache
+H:\UAA9BN\UAA9_BatailleNavale_Grootaers_2023\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.AssemblyInfo.cs
+H:\UAA9BN\UAA9_BatailleNavale_Grootaers_2023\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.csproj.CoreCompileInputs.cache
+H:\UAA9BN\UAA9_BatailleNavale_Grootaers_2023\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.dll
+H:\UAA9BN\UAA9_BatailleNavale_Grootaers_2023\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.pdb
+H:\UAA9BN\UAA9_BatailleNavale_Grootaers_2023\BatailleNaval\obj\Debug\netcoreapp3.1\BatailleNaval.genruntimeconfig.cache

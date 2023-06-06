@@ -32,6 +32,7 @@ namespace BatailleNaval
             string[] bateau = new string[] { "porte avion (5 cases)", "croiseur (4 cases)", "contre-croiseur (3 cases)", "sous-marin (3 cases)", "torpilleur (2 cases)" };
             string question;
             int n;
+            int x;
             int premColonne = 0;
             int premLigne = 0;
             int dernColonne = 0;
@@ -106,57 +107,60 @@ namespace BatailleNaval
                     Console.WriteLine("Ecrivez d'abord les extémités de la où vous voulez mettre vos bateau\nEn commmencant par les premières extrémités puis les dernières\n");
                     Console.WriteLine("répondre en chiffre \nA -> 1\nB -> 2\nC -> 3\nD -> 4\nE -> 5\nF -> 6\nG -> 7\nH -> 8\nI -> 9\nJ -> 10\n");
                     tools.Encodage(bateau, ref premLigne1, ref premColonne1, ref dernLigne1, ref dernColonne1, Ncases1, out resultat1, ref bJ1grille2D, out listPL1, out listPC1, out listDL1, out listDC1);
-
+                    Console.ReadLine();
+                    Console.Clear();
 
                     Console.WriteLine("mtn c'est au tour du Joueur 2");
                     tools.AfficherGrille(bJ2grille2D, out alpha, out resultat2);
                     tools.ConcatGrille(bJ2grille2D, ref resultat2);
                     Console.WriteLine(resultat2);
                     tools.Encodage(bateau, ref premLigne2, ref premColonne2, ref dernLigne2, ref dernColonne2, Ncases2, out resultat2, ref bJ2grille2D, out listPL2, out listPC2, out listDL2, out listDC2);
-
+                    Console.ReadLine();
+                    Console.Clear();
                     while (n1 != 5 || n2 != 5)
                     {
                         tools.AfficherGrille(videGrille1, out alpha, out resultat1A);//grille du joueur où il essaiera de deviner les bateau de l'adversaire
                         tools.ConcatGrille(videGrille1, ref resultat1A);
                         Console.WriteLine(resultat1A);
-                        Console.WriteLine("Joueur 1 essayez de diviner les positions des bateaus de l'adversaire");
+                        Console.WriteLine("Joueur 1 essayez de diviner les positions des bateaux de l'adversaire");
                         question = "ligne :";
                         tools.TryParse(question, out l2);
 
                         question = "Colonne :";
                         tools.TryParse(question, out c2);
-                        tools.Touche(ref videGrille1, c2, l2, listPL2, listPC2, listDL2, listDC2, ref resultat1A);
+                        tools.Touche(ref videGrille1, c2, l2, listPL2, listPC2, listDL2, listDC2, out x, ref resultat1A);
                         if (videGrille1[l2, c2] == "O")
                         {
-                            if (videGrille1[premLigne2, dernLigne2] == "O" && videGrille1[premColonne2, dernColonne2] == "O")
+                            if (videGrille1[listPL2[x], listDL2[x]] == "O" && videGrille1[listPC2[x], listDC2[x]] == "O")
                             {
-                                Console.WriteLine("GG! Vous avez trouvé un bateau de " + (dernLigne2 - premLigne2) + (dernColonne2 - premColonne2));
+                                Console.WriteLine("GG! Vous avez trouvé un bateau");
                                 n1++;
                             }
                         }
 
                         tools.ConcatGrille(videGrille1, ref resultat1A);
-                        Console.WriteLine(resultat2A);
+                        Console.WriteLine(resultat1A);
 
-                        tools.AfficherGrille(videGrille2, out alpha, out resultat2A);//grille du joueur où il essaiera de deviner les bateau de l'adversaire
+                        tools.AfficherGrille(videGrille2, out alpha, out resultat1A);//grille du joueur où il essaiera de deviner les bateau de l'adversaire
                         tools.ConcatGrille(videGrille2, ref resultat2A);
                         Console.WriteLine(resultat2A);
-                        Console.WriteLine("Joueur 2 essayez de diviner les positions des bateaus de l'adversaire");
+                        Console.WriteLine("Joueur 2 essayez de diviner les positions des bateaux de l'adversaire");
                         question = "ligne :";
                         tools.TryParse(question, out l1);
 
                         question = "Colonne :";
                         tools.TryParse(question, out c1);
-                        tools.Touche(ref videGrille2, c1, l1, listPL1, listPC1, listDL1, listDC1, ref resultat2A);
+                        tools.Touche(ref videGrille2, c1, l1, listPL1, listPC1, listDL1, listDC1, out x, ref resultat2A);
 
                         if (videGrille2[l2, c2] == "O")
                         {
-                            if (videGrille2[premLigne1, dernLigne1] == "O" && videGrille1[premColonne1, dernColonne1] == "O")
+                            if (videGrille2[listPL1[x], listDL1[x]] == "O" && videGrille1[listPC1[x], listDC1[x]] == "O")
                             {
-                                Console.WriteLine("GG! Vous avez trouvé un bateau de " + (dernLigne1 - premLigne1) + (dernColonne1 - premColonne1));
+                                Console.WriteLine("GG! Vous avez trouvé un bateau");
                                 n2++;
                             }
                         }
+                        x++;
                     }
                     if (n1 == 5)
                     {

@@ -65,49 +65,80 @@ namespace BatailleNaval
             listPC = new int[5];
             listDL = new int[5];
             listDC = new int[5];
-            bool erreur = true;
-            string array;
+            
+            string arrayPL = "";
+            string arrayPC = "";
+            string arrayDL = "";
+            string arrayDC = "";
+
+            bool retry = true;
             int i = 0;
             resultat = "";
             string question;
             for (int compteur = 0; compteur < bateau.Length; compteur++)
             {
+                bool erreur = true;
                 while (erreur == true)
                 {
-                    Console.WriteLine("Placez le " + bateau[compteur] + "\n");
-
-                    Console.WriteLine("Premières coordonnées :\n");
-                    question = "Choisissez la ligne où vous voulez placer votre bateau :";
-
-                    TryParse(question, out premLigne);
-                    listPL[i] = premLigne;
-                    array = listPL[i] + ",";
-                    Console.WriteLine(array);
-
-                    question = "mtn La colonne :";
-
-                    TryParse(question, out premColonne);
-                    listPC[i] = premColonne;
-                    array = listPC[i] + ",";
-                    Console.WriteLine(array);
-
-                    Console.WriteLine("Dernières coordonnées :\n");
-                    question = "Choisissez la ligne où vous voulez placer votre bateau :";
-
-                    TryParse(question, out dernLigne);
-                    listDL[i] = dernLigne;
-                    array = listDL[i] + ",";
-                    Console.WriteLine(array);
-
-                    question = "La colonne :";
-
-                    TryParse(question, out dernColonne);
-                    listDC[i] = dernColonne;
-                    array = listDC[i] + ",";
-                    Console.WriteLine(array);
-                    if (compteur == 1)
+                    while (retry == true)
                     {
-                        if (premLigne == dernLigne - 5 || premColonne == dernColonne - 5)
+                        Console.WriteLine("Placez le " + bateau[compteur] + "\n");
+
+                        Console.WriteLine("Premières coordonnées :\n");
+                        question = "Choisissez la ligne où vous voulez placer votre bateau :";
+
+                        TryParse(question, out premLigne);
+                        listPL[i] = premLigne;
+                        arrayPL = arrayPL + listPL[i] + ",";
+                        Console.WriteLine(arrayPL);
+
+                        question = "mtn La colonne :";
+
+                        TryParse(question, out premColonne);
+                        listPC[i] = premColonne;
+                        arrayPC = arrayPC + listPC[i] + ",";
+                        Console.WriteLine(arrayPC);
+
+                        if (listPL[i] == listPL[i - 1] || listPC[i] == listPC[i - 1] || listPL[i] == 0 || listPC[i] == 0)
+                        {
+                            Console.WriteLine("Cette case est déjà occupée par un autre bateau");
+                            retry = true;
+                        }
+                        else
+                        {
+                            retry = false;
+                        }
+                    }
+                    while (retry == true)
+                    {
+                        Console.WriteLine("Dernières coordonnées :\n");
+                        question = "Choisissez la ligne où vous voulez placer votre bateau :";
+
+                        TryParse(question, out dernLigne);
+                        listDL[i] = dernLigne;
+                        arrayDL = arrayDL + listDL[i] + ",";
+                        Console.WriteLine(arrayDL);
+
+                        question = "La colonne :";
+
+                        TryParse(question, out dernColonne);
+                        listDC[i] = dernColonne;
+                        arrayDC = arrayDC + listDC[i] + ",";
+                        Console.WriteLine(arrayDC);
+
+                        if (listDL[i] == listDL[i - 1] || listDC[i] == listDC[i - 1] || listDL[i] == 0 || listDC[i] == 0)
+                        {
+                            Console.WriteLine("Cette case est déjà occupée par un autre bateau");
+                            retry = true;
+                        }
+                        else
+                        {
+                            retry = false;
+                        }
+                    }
+                    if (compteur == 0)
+                    {
+                        if (premLigne == dernLigne - 4 || premColonne == dernColonne - 4 || premLigne == dernLigne + 4 || premColonne == dernColonne + 4)
                         {
                             erreur = false;
                         }
@@ -118,7 +149,7 @@ namespace BatailleNaval
                     }
                     else if (compteur == 1)
                     {
-                        if (premLigne == dernLigne + 5 || premColonne == dernColonne + 5)
+                        if (premLigne == dernLigne - 3 || premColonne == dernColonne - 3 || premLigne == dernLigne + 3 || premColonne == dernColonne + 3)
                         {
                             erreur = false;
                         }
@@ -126,21 +157,10 @@ namespace BatailleNaval
                         {
                             erreur = true;
                         }
-                    }
+                    }               
                     else if (compteur == 2)
                     {
-                        if (premLigne == dernLigne - 4 || premColonne == dernColonne - 4)
-                        {
-                            erreur = false;
-                        }
-                        else
-                        {
-                            erreur = true;
-                        }
-                    }
-                    else if (compteur == 2)
-                    {
-                        if (premLigne == dernLigne + 4 || premColonne == dernColonne + 4)
+                        if (premLigne == dernLigne - 2 || premColonne == dernColonne - 2 || premLigne == dernLigne + 2 || premColonne == dernColonne + 2)
                         {
                             erreur = false;
                         }
@@ -151,18 +171,7 @@ namespace BatailleNaval
                     }
                     else if (compteur == 3)
                     {
-                        if (premLigne == dernLigne - 3 || premColonne == dernColonne - 3)
-                        {
-                            erreur = false;
-                        }
-                        else
-                        {
-                            erreur = true;
-                        }
-                    }
-                    else if (compteur == 3)
-                    {
-                        if (premLigne == dernLigne + 3 || premColonne == dernColonne + 3)
+                        if (premLigne == dernLigne - 2 || premColonne == dernColonne - 2 || premLigne == dernLigne + 2 || premColonne == dernColonne + 2)
                         {
                             erreur = false;
                         }
@@ -173,40 +182,7 @@ namespace BatailleNaval
                     }
                     else if (compteur == 4)
                     {
-                        if (premLigne == dernLigne - 3 || premColonne == dernColonne - 3)
-                        {
-                            erreur = false;
-                        }
-                        else
-                        {
-                            erreur = true;
-                        }
-                    }
-                    else if (compteur == 4)
-                    {
-                        if (premLigne == dernLigne + 3 || premColonne == dernColonne + 3)
-                        {
-                            erreur = false;
-                        }
-                        else
-                        {
-                            erreur = true;
-                        }
-                    }
-                    else if (compteur == 5)
-                    {
-                        if (premLigne == dernLigne - 2 || premColonne == dernColonne - 2)
-                        {
-                            erreur = false;
-                        }
-                        else
-                        {
-                            erreur = true;
-                        }
-                    }
-                    else if (compteur == 5)
-                    {
-                        if (premLigne == dernLigne + 2 || premColonne == dernColonne + 2)
+                        if (premLigne == dernLigne - 1 || premColonne == dernColonne - 1 || premLigne == dernLigne + 1 || premColonne == dernColonne + 1)
                         {
                             erreur = false;
                         }
@@ -217,7 +193,6 @@ namespace BatailleNaval
                     }
                     i++;
                 }
-               
                 AfficherBateau(premLigne, premColonne, dernLigne, dernColonne, ref tab2D, out resultat, Ncases);
                 Ncases++;
                 ConcatGrille(tab2D, ref resultat);
@@ -321,73 +296,71 @@ namespace BatailleNaval
         ///<param name="listDL">tableau où les coordonnées des bateau sont enregistrée</param>
         ///<param name="listDC">tableau où les coordonnées des bateau sont enregistrée</param>
         /// <param name="resultat">résultat qui affiche les coordonnées encodée</param>
-        public void Touche(ref string[,] tab2D, int c2, int l2, int[] listPL, int[] listPC, int[] listDL, int[] listDC, ref string resultat)
+        public void Touche(ref string[,] tab2D, int c2, int l2, int[] listPL, int[] listPC, int[] listDL, int[] listDC, out int x,ref string resultat)
         {
             resultat = "";
+            x = 0;
             int l = l2;
             int c = c2;
-            for (int i = 0; i <= 5 - 1; i++)
+            if (listPL[x] < listDL[x])
             {
-                if (listPL[i] < listDL[i])
+                if (listPL[x] <= l2 && l2 <= listDL[x])
                 {
-                    if (listPL[i] <= l2 && l2 <= listDL[i])
-                    {
-                        tab2D[l, c] = "O";
-                        resultat += tab2D[l, c2];
-                        Console.WriteLine("Touché");
-                    }
-                    else
-                    {
-                        tab2D[l, c] = "X";
-                        resultat += tab2D[l, c];
-                        Console.WriteLine("Raté");
-                    }
+                    tab2D[l, c] = "O";
+                    resultat += tab2D[l, c];
+                    Console.WriteLine("Touché");
                 }
-                else if (listPL[i] > listDL[i])
+                else
                 {
-                    if (listPL[i] >= l2 && l2 >= listDL[i])
-                    {
-                        tab2D[l, c] = "O";
-                        resultat += tab2D[l, c];
-                        Console.WriteLine("Touché");
-                    }
-                    else
-                    {
-                        tab2D[l, c] = "X";
-                        resultat += tab2D[l, c];
-                        Console.WriteLine("Raté");
-                    }
+                    tab2D[l, c] = "X";
+                    resultat += tab2D[l, c];
+                    Console.WriteLine("Raté");
                 }
-                else if (listPC[i] < listDC[i])
+            }
+            else if (listPL[x] > listDL[x])
+            {
+                if (listPL[x] >= l2 && l2 >= listDL[x])
                 {
-                    if (listPC[i] <= c2 && c2 <= listDC[i])
-                    {
-                        tab2D[l, c] = "O";
-                        resultat += tab2D[l, c];
-                        Console.WriteLine("Touché");
-                    }
-                    else
-                    {
-                        tab2D[l, c] = "X";
-                        resultat += tab2D[l, c];
-                        Console.WriteLine("Raté");
-                    }
+                    tab2D[l, c] = "O";
+                    resultat += tab2D[l, c];
+                    Console.WriteLine("Touché");
                 }
-                else if (listPC[i] > listDC[i])
+                else
                 {
+                    tab2D[l, c] = "X";
+                    resultat += tab2D[l, c];
+                    Console.WriteLine("Raté");
+                }
+            }
+            else if (listPC[x] < listDC[x])
+            {
+                if (listPC[x] <= c2 && c2 <= listDC[x])
+                {
+                    tab2D[l, c] = "O";
+                    resultat += tab2D[l, c];
+                    Console.WriteLine("Touché");
+                }
+                else
+                {
+                    tab2D[l, c] = "X";
+                    resultat += tab2D[l, c];
+                    Console.WriteLine("Raté");
+                }
+            }
+            else if (listPC[x] > listDC[x])
+            {
 
-                    if (listPC[i] >= c2 && c2 >= listDC[i])
-                    {
-                        tab2D[l, c] = "O";
-                        resultat += tab2D[l, c];
-                        Console.WriteLine("Touché");
-                    }
-                    else
-                    {
-                        tab2D[l, c] = "X";
-                        resultat += tab2D[l, c];
-                        Console.WriteLine("Raté");
-                    }
+                if (listPC[x] >= c2 && c2 >= listDC[x])
+                {
+                    tab2D[l, c] = "O";
+                    resultat += tab2D[l, c];
+                    Console.WriteLine("Touché");
+                }
+                else
+                {
+                    tab2D[l, c] = "X";
+                    resultat += tab2D[l, c];
+                    Console.WriteLine("Raté");
                 }
             }
         }

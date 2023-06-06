@@ -8,24 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\roman\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\210469.asty-moulin\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\roman\\OneDrive\\Documents\\Progra\\UAA11\\UAA9BN\\BatailleNaval\\BatailleNaval\\BatailleNaval.csproj",
+      "projectUniqueName": "H:\\UAA9BN\\UAA9_BatailleNavale_Grootaers_2023\\BatailleNaval\\BatailleNaval.csproj",
       "projectName": "BatailleNaval",
-      "projectPath": "C:\\Users\\roman\\OneDrive\\Documents\\Progra\\UAA11\\UAA9BN\\BatailleNaval\\BatailleNaval\\BatailleNaval.csproj",
-      "packagesPath": "C:\\Users\\roman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\roman\\OneDrive\\Documents\\Progra\\UAA11\\UAA9BN\\BatailleNaval\\BatailleNaval\\obj\\",
+      "projectPath": "H:\\UAA9BN\\UAA9_BatailleNavale_Grootaers_2023\\BatailleNaval\\BatailleNaval.csproj",
+      "packagesPath": "C:\\Users\\210469.asty-moulin\\.nuget\\packages\\",
+      "outputPath": "H:\\UAA9BN\\UAA9_BatailleNavale_Grootaers_2023\\BatailleNaval\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\roman\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\210469.asty-moulin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -33,7 +32,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -57,8 +55,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -67,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.409\\RuntimeIdentifierGraph.json"
       }
     }
   }
