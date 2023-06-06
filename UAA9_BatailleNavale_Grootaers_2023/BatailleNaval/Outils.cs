@@ -80,8 +80,8 @@ namespace BatailleNaval
                 bool erreur = true;
                 while (erreur == true)
                 {
-                    while (retry == true)
-                    {
+                    //while (retry == true)
+                    //{
                         Console.WriteLine("Placez le " + bateau[compteur] + "\n");
 
                         Console.WriteLine("Premières coordonnées :\n");
@@ -99,18 +99,18 @@ namespace BatailleNaval
                         arrayPC = arrayPC + listPC[i] + ",";
                         Console.WriteLine(arrayPC);
 
-                        if (listPL[i] == listPL[i - 1] || listPC[i] == listPC[i - 1] || listPL[i] == 0 || listPC[i] == 0)
-                        {
-                            Console.WriteLine("Cette case est déjà occupée par un autre bateau");
-                            retry = true;
-                        }
-                        else
-                        {
-                            retry = false;
-                        }
-                    }
-                    while (retry == true)
-                    {
+                        //if (listPL[i] == listPL[i - 1] || listPC[i] == listPC[i - 1])
+                        //{
+                        //    Console.WriteLine("Cette case est déjà occupée par un autre bateau");
+                        //    retry = true;
+                        //}
+                        //else
+                        //{
+                        //    retry = false;
+                        //}
+                    //}
+                    //while (retry == true)
+                    //{
                         Console.WriteLine("Dernières coordonnées :\n");
                         question = "Choisissez la ligne où vous voulez placer votre bateau :";
 
@@ -126,16 +126,16 @@ namespace BatailleNaval
                         arrayDC = arrayDC + listDC[i] + ",";
                         Console.WriteLine(arrayDC);
 
-                        if (listDL[i] == listDL[i - 1] || listDC[i] == listDC[i - 1] || listDL[i] == 0 || listDC[i] == 0)
-                        {
-                            Console.WriteLine("Cette case est déjà occupée par un autre bateau");
-                            retry = true;
-                        }
-                        else
-                        {
-                            retry = false;
-                        }
-                    }
+                        //if (listDL[i] == listDL[i - 1] || listDC[i] == listDC[i - 1])
+                        //{
+                        //    Console.WriteLine("Cette case est déjà occupée par un autre bateau");
+                        //    retry = true;
+                        //}
+                        //else
+                        //{
+                        //    retry = false;
+                        //}
+                    //}
                     if (compteur == 0)
                     {
                         if (premLigne == dernLigne - 4 || premColonne == dernColonne - 4 || premLigne == dernLigne + 4 || premColonne == dernColonne + 4)
